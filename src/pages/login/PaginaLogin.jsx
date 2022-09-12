@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { AuthenticationContext } from "../../Context/authentication";
 
-import "./LoginStyle.css";
+import "./PaginaLoginStyle.css";
 
-const Login = () => {
+const PaginaLogin = () => {
   const { authenticated, login } = useContext(AuthenticationContext);
 
   const [nome, setNome] = useState("");
@@ -14,7 +14,6 @@ const Login = () => {
     event.preventDefault();
     console.log("submit", { nome, email, senha });
     login(nome, email, senha);
-    console.log(authenticated);
   };
 
   return (
@@ -59,4 +58,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default PaginaLogin;
