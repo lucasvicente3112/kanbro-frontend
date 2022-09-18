@@ -3,11 +3,12 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import PaginaHome from "./pages/home/PaginaHome";
 import PaginaLogin from "./pages/login/PaginaLogin";
+import PaginCadastro from "./pages/cadastro/PaginaCadastro";
 
 import {
   AuthenticationProvider,
   AuthenticationContext,
-} from "./Context/authentication";
+} from "./Context/autenticacao";
 import { useContext } from "react";
 
 const AppRoutes = () => {
@@ -27,16 +28,9 @@ const AppRoutes = () => {
     <BrowserRouter>
       <AuthenticationProvider>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              // <rotaPrivada>
-              <PaginaHome />
-              // </rotaPrivada>
-            }
-          />
-          <Route exact path="/login" element={<PaginaLogin />} />
+          <Route exact path="/" element={<PaginaLogin />} />
+          <Route exact path="/cadastro" element={<PaginCadastro />} />
+          <Route exact path="/home" element={<PaginaHome />} />
         </Routes>
       </AuthenticationProvider>
     </BrowserRouter>
@@ -44,3 +38,13 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
+// <Route
+// exact
+// path="/"
+// element={
+//   // <rotaPrivada>
+//   <PaginaHome />
+//   // </rotaPrivada>
+// }
+// />

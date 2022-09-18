@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { AuthenticationContext } from "../../Context/authentication";
+import { useNavigate } from "react-router-dom";
+import cadastro from "./cadastro";
 
-import "./PaginaLoginStyle.css";
+import "./PaginaCadastroStyle.css";
 
 const PaginaLogin = () => {
-  const { login } = useContext(AuthenticationContext);
-
+  const navigate = useNavigate();
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -13,12 +13,13 @@ const PaginaLogin = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    login(nome, email, senha);
+    cadastro(email, nome, senha);
+    navigate("/");
   };
 
   return (
-    <div id="login">
-      <h1 className="title">Login</h1>
+    <div id="cadastro">
+      <h1 className="title">Cadastro</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="nome">Nome</label>
@@ -51,7 +52,7 @@ const PaginaLogin = () => {
           />
         </div>
         <div className="actions">
-          <button type="submit">Entrar</button>
+          <button type="submit">Cadastrar</button>
         </div>
       </form>
     </div>

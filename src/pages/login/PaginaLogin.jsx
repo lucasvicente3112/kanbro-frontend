@@ -1,19 +1,23 @@
 import React, { useState, useContext } from "react";
-import { AuthenticationContext } from "../../Context/authentication";
+import { useNavigate } from "react-router-dom";
+import { AuthenticationContext } from "../../Context/autenticacao";
 
 import "./PaginaLoginStyle.css";
 
 const PaginaLogin = () => {
   const { authenticated, login } = useContext(AuthenticationContext);
+  const navigate = useNavigate();
 
-  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit", { nome, email, senha });
+    console.log("submit", { email, senha });
     login(email, senha);
+  };
+  const navegaCadastro = () => {
+    navigate("/cadastro");
   };
 
   return (
@@ -44,6 +48,10 @@ const PaginaLogin = () => {
           <button type="submit">Entrar</button>
         </div>
       </form>
+
+      <div>
+        <button onClick={() => navegaCadastro()}>Cadastrar</button>
+      </div>
     </div>
   );
 };

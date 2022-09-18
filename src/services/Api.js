@@ -7,3 +7,7 @@ export const api = axios.create({
 export const createSession = async (email, senha) => {
   return api.post("/usuario/login", { email, senha });
 };
+
+export const createUser = async (email, nome, senha) => {
+  return api.post("/usuario/cadastrar", { email, nome, senha });
+};
