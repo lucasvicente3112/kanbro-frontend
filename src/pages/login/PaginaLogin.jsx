@@ -13,23 +13,13 @@ const PaginaLogin = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("submit", { nome, email, senha });
-    login(nome, email, senha);
+    login(email, senha);
   };
 
   return (
     <div id="login">
       <h1 className="title">Login</h1>
       <form className="form" onSubmit={handleSubmit}>
-        <div className="field">
-          <label htmlFor="nome">Nome</label>
-          <input
-            type="nome"
-            name="nome"
-            id="nome"
-            value={nome}
-            onChange={(event) => setNome(event.target.value)}
-          />
-        </div>
         <div className="field">
           <label htmlFor="email">E-mail</label>
           <input
