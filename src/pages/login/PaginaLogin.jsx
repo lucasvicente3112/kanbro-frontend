@@ -49,11 +49,10 @@ const PaginaLogin = () => {
         <div className="actions">
           <button type="submit">Entrar</button>
         </div>
+        <div>
+          <button onClick={() => navegaCadastro()}>Cadastrar</button>
+        </div>
       </form>
-
-      <div>
-        <button onClick={() => navegaCadastro()}>Cadastrar</button>
-      </div>
     </div>
   );
 };
