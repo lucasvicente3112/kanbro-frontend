@@ -13,7 +13,7 @@ const PaginaLogin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit", { email, senha });
+
     login(email, senha);
   };
   const navegaCadastro = () => {

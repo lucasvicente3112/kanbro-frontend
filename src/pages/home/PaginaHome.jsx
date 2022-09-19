@@ -10,6 +10,7 @@ const PaginaHome = () => {
   return (
     <>
       <h1>Home</h1>
+      <h2>Time criado com sucesso!</h2>
       <button onClick={() => handleLogout()}>Logout</button>
     </>
   );

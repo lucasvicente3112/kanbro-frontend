@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import PaginaHome from "./pages/home/PaginaHome";
 import PaginaLogin from "./pages/login/PaginaLogin";
-import PaginCadastro from "./pages/cadastro/PaginaCadastro";
+import PaginaCadastro from "./pages/cadastro/PaginaCadastro";
+import CriarTime from "./pages/criarTime/CriarTime";
 
 import {
   AuthenticationProvider,
@@ -29,7 +30,8 @@ const AppRoutes = () => {
       <AuthenticationProvider>
         <Routes>
           <Route exact path="/" element={<PaginaLogin />} />
-          <Route exact path="/cadastro" element={<PaginCadastro />} />
+          <Route exact path="/cadastro" element={<PaginaCadastro />} />
+          <Route exact path="/cadastro-time" element={<CriarTime />} />
           <Route exact path="/home" element={<PaginaHome />} />
         </Routes>
       </AuthenticationProvider>

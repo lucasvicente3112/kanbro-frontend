@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createSession } from "../services/Api";
+import { api, criarSessao } from "../services/Api";
 
 export const AuthenticationContext = createContext();
 
@@ -20,12 +20,12 @@ export const AuthenticationProvider = ({ children }) => {
   }, []);
 
   const login = async (email, senha) => {
-    const response = await createSession(email, senha);
+    const response = await criarSessao(email, senha);
 
     const usuarioLogado = response.data.email;
     const token = response.data.token;
 
-    localStorage.setItem("usuario", JSON.stringify(usuarioLogado));
+    localStorage.setItem("email", usuarioLogado);
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
     api.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -34,7 +34,7 @@ export const AuthenticationProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("usuario");
+    localStorage.removeItem("email");
     localStorage.removeItem("token");
 
     api.defaults.headers.Authorization = null;

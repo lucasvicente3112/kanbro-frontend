@@ -14,7 +14,7 @@ const PaginaLogin = () => {
     event.preventDefault();
 
     cadastro(email, nome, senha);
-    navigate("/");
+    navigate("/cadastro-time");
   };
 
   return (
