@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import BoxLateral from "../../assets/BoxLateral";
 import { AuthenticationContext } from "../../Context/autenticacao";
 
 import "./PaginaLoginStyle.css";
@@ -22,6 +23,7 @@ const PaginaLogin = () => {
 
   return (
     <div id="login">
+      <BoxLateral />
       <h1 className="title">Login</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">

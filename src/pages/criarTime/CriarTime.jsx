@@ -23,6 +23,7 @@ const PaginaLogin = () => {
     event.preventDefault();
 
     cadastroTime(time);
+    localStorage.setItem("nomeTime", nomeTime);
     navigate("/home");
   };
 
