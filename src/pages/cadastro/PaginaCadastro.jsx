@@ -5,7 +5,7 @@ import { recuperaTime } from "../../services/Api";
 
 import "./PaginaCadastroStyle.css";
 
-const PaginaLogin = () => {
+const PaginaCadastro = () => {
   const navigate = useNavigate();
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -18,14 +18,14 @@ const PaginaLogin = () => {
 
     localStorage.setItem("email", email);
 
-    const time = await recuperaTime(email);
-    console.log(time);
-    if (time) {
-      navigate("/home");
-    }
-    if (!time) {
-      navigate("/menu-time");
-    }
+    // const time = await recuperaTime(email);
+    // console.log(time);
+    // if (time) {
+    //   navigate("/home");
+    // }
+    // if (!time) {
+    navigate("/menu-time");
+    // }
   };
 
   return (
@@ -70,4 +70,4 @@ const PaginaLogin = () => {
   );
 };
 
-export default PaginaLogin;
+export default PaginaCadastro;
