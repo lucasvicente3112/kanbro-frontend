@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import cadastro from "./cadastro";
+import { recuperaTime } from "../../services/Api";
 
 import "./PaginaCadastroStyle.css";
 
@@ -10,11 +11,21 @@ const PaginaLogin = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     cadastro(email, nome, senha);
-    navigate("/cadastro-time");
+
+    localStorage.setItem("email", email);
+
+    const time = await recuperaTime(email);
+    console.log(time);
+    if (time) {
+      navigate("/home");
+    }
+    if (!time) {
+      navigate("/menu-time");
+    }
   };
 
   return (

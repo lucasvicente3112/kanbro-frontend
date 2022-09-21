@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, criarSessao } from "../services/Api";
+import { api, criarSessao, recuperaTime } from "../services/Api";
 
 export const AuthenticationContext = createContext();
 
@@ -24,13 +24,19 @@ export const AuthenticationProvider = ({ children }) => {
 
     const usuarioLogado = response.data.email;
     const token = response.data.token;
+    const time = await recuperaTime(email);
 
     localStorage.setItem("email", usuarioLogado);
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
     api.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     setUsuario(usuarioLogado);
-    navigate("/home");
+    if (time) {
+      navigate("/home");
+    }
+    if (!time) {
+      navigate("/menu-time");
+    }
   };
 
   const logout = () => {
