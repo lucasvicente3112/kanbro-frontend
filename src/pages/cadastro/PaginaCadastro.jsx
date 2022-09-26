@@ -18,14 +18,14 @@ const PaginaCadastro = () => {
 
     localStorage.setItem("email", email);
 
-    // const time = await recuperaTime(email);
-    // console.log(time);
-    // if (time) {
-    //   navigate("/home");
-    // }
-    // if (!time) {
-    navigate("/menu-time");
-    // }
+    const time = await recuperaTime(email).data;
+    console.log(time);
+    if (time) {
+      navigate("/home");
+    }
+    if (!time) {
+      navigate("/menu-time");
+    }
   };
 
   return (

@@ -31,6 +31,7 @@ export const AuthenticationProvider = ({ children }) => {
     api.defaults.headers.Authorization = `Bearer ${token}`;
     api.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     setUsuario(usuarioLogado);
+    console.log("data time", time.data);
     if (time) {
       navigate("/home");
     }
