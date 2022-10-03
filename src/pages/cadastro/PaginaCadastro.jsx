@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import cadastro from "./cadastro";
-import { recuperaTime } from "../../services/Api";
+import { recuperaUsuarioComTime } from "../../services/Api";
 
 import "./PaginaCadastroStyle.css";
 
@@ -18,14 +18,14 @@ const PaginaCadastro = () => {
 
     localStorage.setItem("email", email);
 
-    const time = await recuperaTime(email).data;
-    console.log(time);
-    if (time) {
-      navigate("/home");
-    }
-    if (!time) {
-      navigate("/menu-time");
-    }
+    // const time = await recuperaTime(email).data;
+    // console.log(time);
+    // if (time) {
+    //   navigate("/home");
+    // }
+    // if (!time) {
+    navigate("/menu-time");
+    // }
   };
 
   return (

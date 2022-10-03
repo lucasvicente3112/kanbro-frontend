@@ -20,6 +20,6 @@ export const criarQuadro = async (idTime) => {
   return api.post("/quadro/cadastrar", idTime);
 };
 
-export const recuperaTime = async (email) => {
+export const recuperaUsuarioComTime = async (email) => {
   return api.get(`/usuario/email/${email}/time`);
 };
