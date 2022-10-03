@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cadastroTime from "./cadastroTime";
+import cadastroQuadro from "./cadastroQuadro";
 
 import "./CriarTimeStyle.css";
 
@@ -19,12 +20,21 @@ const PaginaLogin = () => {
     ],
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    cadastroTime(time);
+    const idTime = await cadastroTime(time);
+    const quadro = {
+      time: `${idTime}`,
+    };
+    localStorage.setItem("idTime", idTime);
     localStorage.setItem("nomeTime", nomeTime);
-    navigate("/home");
+    const idQuadro = await cadastroQuadro(quadro);
+    console.log("idQuadro", idQuadro);
+    if (idTime) {
+      navigate(`/quadro/${idTime}`);
+    }
+    // navigate("/home");
   };
 
   return (

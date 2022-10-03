@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import { AuthenticationContext } from "../../Context/autenticacao";
 
-const PaginaHome = () => {
+const QuadroKanban = () => {
+  let { idTime } = useParams();
   const { logout } = useContext(AuthenticationContext);
   const handleLogout = () => {
     logout();
@@ -9,10 +11,10 @@ const PaginaHome = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h2>Quadro do time {idTime}</h2>
       <button onClick={() => handleLogout()}>Logout</button>
     </>
   );
 };
 
-export default PaginaHome;
+export default QuadroKanban;

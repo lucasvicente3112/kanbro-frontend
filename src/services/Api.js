@@ -15,3 +15,11 @@ export const criarUsuario = async (email, nome, senha) => {
 export const criarTime = async (time) => {
   return api.post("/time/cadastrar", time);
 };
+
+export const criarQuadro = async (idTime) => {
+  return api.post("/quadro/cadastrar", idTime);
+};
+
+export const recuperaUsuarioComTime = async (email) => {
+  return api.get(`/usuario/email/${email}/time`);
+};

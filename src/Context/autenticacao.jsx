@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, criarSessao } from "../services/Api";
+import { api, criarSessao, recuperaUsuarioComTime } from "../services/Api";
 
 export const AuthenticationContext = createContext();
 
@@ -24,13 +24,20 @@ export const AuthenticationProvider = ({ children }) => {
 
     const usuarioLogado = response.data.email;
     const token = response.data.token;
+    const responseUsuario = await recuperaUsuarioComTime(email);
 
     localStorage.setItem("email", usuarioLogado);
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
     api.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     setUsuario(usuarioLogado);
-    navigate("/home");
+    console.log("data time", responseUsuario.data);
+    if (responseUsuario.data.idTime) {
+      navigate(`/quadro/${responseUsuario.data.idTime}`);
+    }
+    if (!responseUsuario.data.idTime) {
+      navigate("/menu-time");
+    }
   };
 
   const logout = () => {

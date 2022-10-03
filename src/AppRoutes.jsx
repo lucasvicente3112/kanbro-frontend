@@ -5,6 +5,9 @@ import PaginaHome from "./pages/home/PaginaHome";
 import PaginaLogin from "./pages/login/PaginaLogin";
 import PaginaCadastro from "./pages/cadastro/PaginaCadastro";
 import CriarTime from "./pages/criarTime/CriarTime";
+import MenuTime from "./pages/menuTime/MenuTime";
+import EsperaConvite from "./pages/espera/EsperaConvite";
+import QuadroKanban from "./pages/quadroKanban/QuadroKanban";
 
 import {
   AuthenticationProvider,
@@ -32,6 +35,9 @@ const AppRoutes = () => {
           <Route exact path="/" element={<PaginaLogin />} />
           <Route exact path="/cadastro" element={<PaginaCadastro />} />
           <Route exact path="/cadastro-time" element={<CriarTime />} />
+          <Route exact path="/menu-time" element={<MenuTime />} />
+          <Route exact path="/espera" element={<EsperaConvite />} />
+          <Route exact path="/quadro/:idTime" element={<QuadroKanban />} />
           <Route exact path="/home" element={<PaginaHome />} />
         </Routes>
       </AuthenticationProvider>
