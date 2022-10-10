@@ -23,3 +23,11 @@ export const criarQuadro = async (idTime) => {
 export const recuperaUsuarioComTime = async (email) => {
   return api.get(`/usuario/email/${email}/time`);
 };
+
+export const adicionarMembroEmTime = async (email, idTime) => {
+  return api.post(`/time/${idTime}/adicionar/${email}`);
+};
+
+export const recuperaUsuariosDoTime = async (idTime) => {
+  return api.get(`/usuario/time/${idTime}`);
+};

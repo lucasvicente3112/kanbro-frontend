@@ -8,7 +8,8 @@ import CriarTime from "./pages/criarTime/CriarTime";
 import MenuTime from "./pages/menuTime/MenuTime";
 import EsperaConvite from "./pages/espera/EsperaConvite";
 import QuadroKanban from "./pages/quadroKanban/QuadroKanban";
-
+import AdicaoMembro from "./pages/adicaoMembro/AdicaoMembro";
+import MembrosTime from "./pages/membrosTime/MembrosTime";
 import {
   AuthenticationProvider,
   AuthenticationContext,
@@ -38,6 +39,12 @@ const AppRoutes = () => {
           <Route exact path="/menu-time" element={<MenuTime />} />
           <Route exact path="/espera" element={<EsperaConvite />} />
           <Route exact path="/quadro/:idTime" element={<QuadroKanban />} />
+          <Route
+            exact
+            path="/quadro/adicionar-membros/:idTime"
+            element={<AdicaoMembro />}
+          />
+          <Route exact path="/time/membros/:idTime" element={<MembrosTime />} />
           <Route exact path="/home" element={<PaginaHome />} />
         </Routes>
       </AuthenticationProvider>

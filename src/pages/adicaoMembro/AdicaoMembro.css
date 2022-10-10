@@ -1,0 +1,30 @@
+#adicaoMembro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 0 2rem;
+}
+
+#adicaoMembro .form{    
+    text-align:center;
+    padding-bottom: 0.5rem;
+}
+
+#adicaoMembro .field{
+    padding-bottom: 0.5rem;
+}
+
+#adicaoMembro .field input{
+    width: 100%;
+
+}
+#adicaoMembro .divSpacing{
+    padding-bottom: 0.5rem;
+}
+
+#adicaoMembro .actions{
+    text-align: center;
+    margin-top: 0.5rem;
+}
