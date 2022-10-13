@@ -31,3 +31,7 @@ export const adicionarMembroEmTime = async (email, idTime) => {
 export const recuperaUsuariosDoTime = async (idTime) => {
   return api.get(`/usuario/time/${idTime}`);
 };
+
+export const removeUsuarioDoTime = async (email) => {
+  return api.post(`/time/remover/${email}`);
+};

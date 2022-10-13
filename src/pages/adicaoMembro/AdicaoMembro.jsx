@@ -15,6 +15,7 @@ const AdicaoMembro = () => {
 
   const handleSubmit = async () => {
     const response = await adicionarMembroEmTime(email, idTime);
+    navegarQuadro();
   };
 
   return (
