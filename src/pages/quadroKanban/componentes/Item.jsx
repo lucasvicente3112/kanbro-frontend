@@ -3,7 +3,7 @@ import { useDrag, useDrop } from "react-dnd";
 import Window from "./Window";
 import ITEM_TYPE from "../data/types";
 
-const Card = ({ item, index, moveItem, status }) => {
+const Item = ({ item, index, moveItem, status }) => {
   const ref = useRef(null);
 
   const [, drop] = useDrop({
@@ -27,10 +27,10 @@ const Card = ({ item, index, moveItem, status }) => {
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
         return;
       }
-      if (dragIndex > hoverIndex && hoverClientY < hoverMiddleY) {
+
+      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
         return;
       }
-
       moveItem(dragIndex, hoverIndex);
       item.index = hoverIndex;
     },
@@ -38,7 +38,9 @@ const Card = ({ item, index, moveItem, status }) => {
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: ITEM_TYPE, ...item, index },
-    collect: (monitor) => ({ isDragging: monitor.isDragging() }),
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
   });
 
   const [show, setShow] = useState(false);
@@ -61,12 +63,13 @@ const Card = ({ item, index, moveItem, status }) => {
           className={"color-bar"}
           style={{ backgroundColor: status.color }}
         />
+        <p className={"item-title"}>{item.title}</p>
         <p className={"item-title"}>{item.content}</p>
-        <p className={"item-status"}>{item.status}</p>
+        {/* <p className={"item-status"}>{item.icon}</p> */}
       </div>
       <Window item={item} onClose={onClose} show={show} />
     </Fragment>
   );
 };
 
-export default Card;
+export default Item;

@@ -9,7 +9,7 @@ const data = [
   {
     id: 2,
     icon: "⭕️",
-    status: "open",
+    status: "in progress",
     title: "Purchase present",
     content: "Get an anniversary gift",
   },

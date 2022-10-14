@@ -13,6 +13,7 @@ const DropWrapper = ({ onDrop, children, status }) => {
     },
     drop: (item, monitor) => {
       onDrop(item, monitor, status);
+      //chamar banco para atualizar status
     },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
