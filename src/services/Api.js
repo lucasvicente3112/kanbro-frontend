@@ -35,3 +35,7 @@ export const recuperaUsuariosDoTime = async (idTime) => {
 export const removeUsuarioDoTime = async (email) => {
   return api.post(`/time/remover/${email}`);
 };
+
+export const adicionarTarefa = async (tarefa) => {
+  return api.post("tarefa/cadastrar", tarefa);
+};

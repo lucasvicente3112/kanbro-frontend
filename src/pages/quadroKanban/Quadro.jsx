@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Item from "./componentes/Item";
 import DropWrapper from "./componentes/DropWrapper";
 import Coluna from "./componentes/Coluna";
-import { data, statuses } from "./data";
 import Header from "./componentes/Header";
+import NovaTarefa from "./componentes/NovaTarefa";
+import { data, statuses } from "./data";
+import { Button } from "primereact/button";
 
 const Quadro = () => {
   const [items, setItems] = useState(data);
-  console.log(items);
   const onDrop = (item, monitor, status) => {
     const mapping = statuses.find((statusItem) => statusItem.status === status);
 
@@ -27,9 +28,17 @@ const Quadro = () => {
     });
   };
 
+  const [show, setShow] = useState(false);
+
+  const onOpen = () => setShow(true);
+
+  const onClose = () => setShow(false);
+
   return (
-    <>
+    <Fragment>
       <Header />
+      <Button type="button" label="+ Criar" onClick={onOpen} />
+      <NovaTarefa onClose={onClose} show={show} />
       <div className={"row"}>
         {statuses.map((s) => {
           return (
@@ -54,7 +63,7 @@ const Quadro = () => {
           );
         })}
       </div>
-    </>
+    </Fragment>
   );
 };
 
