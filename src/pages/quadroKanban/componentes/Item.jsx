@@ -1,39 +1,13 @@
 import React, { Fragment, useState, useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import Window from "./Window";
+import DetalhesTarefa from "./DetalhesTarefa";
 import ITEM_TYPE from "../data/types";
 
-const Item = ({ item, index, moveItem, status }) => {
+const Item = ({ item, index, status }) => {
   const ref = useRef(null);
 
   const [, drop] = useDrop({
     accept: ITEM_TYPE,
-    hover(item, monitor) {
-      if (!ref.current) {
-        return;
-      }
-      const dragIndex = item.index;
-      const hoverIndex = index;
-
-      if (dragIndex === hoverIndex) {
-        return;
-      }
-
-      const hoveredRect = ref.current.getBoundingClientRect();
-      const hoverMiddleY = (hoveredRect.bottom - hoveredRect.top) / 2;
-      const mousePosition = monitor.getClientOffset();
-      const hoverClientY = mousePosition.y - hoveredRect.top;
-
-      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-        return;
-      }
-
-      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-        return;
-      }
-      moveItem(dragIndex, hoverIndex);
-      item.index = hoverIndex;
-    },
   });
 
   const [{ isDragging }, drag] = useDrag({
@@ -44,9 +18,7 @@ const Item = ({ item, index, moveItem, status }) => {
   });
 
   const [show, setShow] = useState(false);
-
   const onOpen = () => setShow(true);
-
   const onClose = () => setShow(false);
 
   drag(drop(ref));
@@ -63,12 +35,11 @@ const Item = ({ item, index, moveItem, status }) => {
           className={"color-bar"}
           style={{ backgroundColor: status.color }}
         />
-        <p className={"item-title"}>{item.titulo}</p>
-        <p className={"item-title"}>{item.descricao}</p>
-        <p className={"item-title"}>{item.responsavel}</p>
-        {/* <p className={"item-status"}>{item.icon}</p> */}
+        <p className={"titulo-item"}>Título: {item.titulo}</p>
+        <p className={"titulo-item"}>Descrição: {item.descricao}</p>
+        <p className={"titulo-item"}>Responsável: {item.responsavel}</p>
       </div>
-      <Window item={item} onClose={onClose} show={show} />
+      <DetalhesTarefa item={item} onClose={onClose} show={show} />
     </Fragment>
   );
 };

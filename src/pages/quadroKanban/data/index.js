@@ -1,39 +1,4 @@
-const data = [
-  {
-    id: 10,
-    // icon: "⭕️",
-    titulo: "Refatorar",
-    descricao: "Refatorar Código 1",
-    responsavel: "Lucas",
-    status: "To Do",
-  },
-  {
-    id: 20,
-    icon: "⭕️",
-    titulo: "Refatorar",
-    descricao: "Refatorar Código 2",
-    responsavel: "Lucas",
-    status: "To Do",
-  },
-  {
-    id: 30,
-    icon: "⭕️",
-    titulo: "Refatorar",
-    descricao: "Refatorar Código 3",
-    responsavel: "Lucas",
-    status: "To Do",
-  },
-  {
-    id: 40,
-    icon: "⭕️",
-    titulo: "Refatorar",
-    descricao: "Refatorar Código 4",
-    responsavel: "Lucas",
-    status: "To Do",
-  },
-];
-
-const statuses = [
+const estados = [
   {
     status: "To Do",
     icon: "⭕️",
@@ -51,4 +16,4 @@ const statuses = [
   },
 ];
 
-export { data, statuses };
+export { estados };

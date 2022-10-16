@@ -25,7 +25,7 @@ const NovaTarefa = ({ show, onClose }) => {
   };
 
   const criaTarefa = async () => {
-    const response = await adicionarTarefa(NovaTarefa);
+    await adicionarTarefa(NovaTarefa);
   };
 
   return (
