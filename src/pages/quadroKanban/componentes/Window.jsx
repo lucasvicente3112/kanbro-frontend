@@ -11,14 +11,14 @@ const Window = ({ show, onClose, item }) => {
       overlayClassName={"overlay"}
     >
       <div className={"close-btn-ctn"}>
-        <h1 style={{ flex: "1 90%" }}>{item.title}</h1>
+        <h1 style={{ flex: "1 90%" }}>{item.titulo}</h1>
         <button className={"close-btn"} onClick={onClose}>
           X
         </button>
       </div>
       <div>
         <h2>Descrição</h2>
-        <p>{item.content}</p>
+        <p>{item.descricao}</p>
         <h2>Status</h2>
         <p>
           {item.icon}

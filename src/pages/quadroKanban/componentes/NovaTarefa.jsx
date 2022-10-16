@@ -3,14 +3,16 @@ import Modal from "react-modal";
 import { TextField } from "@mui/material";
 import { Button } from "primereact/button";
 import { adicionarTarefa } from "../../../services/Api";
+import { useParams } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
-const NovaTarefa = ({ show, onClose, item }) => {
+const NovaTarefa = ({ show, onClose }) => {
+  let { idTime } = useParams();
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [responsavel, setResponsavel] = useState("");
-  const [status, setStatus] = useState("ToDo");
+  const [status, setStatus] = useState("To Do");
 
   const NovaTarefa = {
     titulo: `${titulo}`,
@@ -18,14 +20,12 @@ const NovaTarefa = ({ show, onClose, item }) => {
     responsavel: `${responsavel}`,
     status: `${status}`,
     quadro: {
-      time: 1,
+      time: `${idTime}`,
     },
   };
 
   const criaTarefa = async () => {
     const response = await adicionarTarefa(NovaTarefa);
-    console.log("response", response.data);
-    console.log(NovaTarefa);
   };
 
   return (
