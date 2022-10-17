@@ -10,6 +10,8 @@ import EsperaConvite from "./pages/espera/EsperaConvite";
 import QuadroKanban from "./pages/quadroKanban/QuadroKanban";
 import AdicaoMembro from "./pages/adicaoMembro/AdicaoMembro";
 import MembrosTime from "./pages/membrosTime/MembrosTime";
+import Chat from "./pages/chat/Chat";
+
 import {
   AuthenticationProvider,
   AuthenticationContext,
@@ -45,6 +47,7 @@ const AppRoutes = () => {
             element={<AdicaoMembro />}
           />
           <Route exact path="/time/membros/:idTime" element={<MembrosTime />} />
+          <Route exact path="/chat" element={<Chat />} />
           <Route exact path="/home" element={<PaginaHome />} />
         </Routes>
       </AuthenticationProvider>
