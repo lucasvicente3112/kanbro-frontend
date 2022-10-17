@@ -49,3 +49,7 @@ export const atualizaStatus = async (tarefa, quadro, status) => {
     `/tarefa/${tarefa}/quadro/${quadro}/atualiza-status/${status}`
   );
 };
+
+export const recuperaResponseSocket = async (sala) => {
+  return api.get(`/mensagem/${sala}`);
+};

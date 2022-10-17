@@ -30,7 +30,6 @@ const PaginaLogin = () => {
     localStorage.setItem("idTime", idTime);
     localStorage.setItem("nomeTime", nomeTime);
     const idQuadro = await cadastroQuadro(quadro);
-    console.log("idQuadro", idQuadro);
     if (idTime) {
       navigate(`/quadro/${idTime}`);
     }

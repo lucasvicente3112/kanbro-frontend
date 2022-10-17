@@ -26,7 +26,6 @@ const DataTableTime = () => {
       await removeUsuarioDoTime(email);
     }
     window.location.reload();
-    console.log(email);
   };
   const actionBodyTemplate = (rowData) => {
     return (

@@ -10,7 +10,7 @@ export const AuthenticationProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const usuarioEmMemoria = localStorage.getItem("usuario");
+    const usuarioEmMemoria = localStorage.getItem("usuarios");
 
     if (usuarioEmMemoria) {
       setUsuario(JSON.parse(usuarioEmMemoria));
@@ -21,17 +21,17 @@ export const AuthenticationProvider = ({ children }) => {
 
   const login = async (email, senha) => {
     const response = await criarSessao(email, senha);
-
+    console.log(response.data);
     const usuarioLogado = response.data.email;
     const token = response.data.token;
     const responseUsuario = await recuperaUsuarioComTime(email);
 
     localStorage.setItem("email", usuarioLogado);
+    localStorage.setItem("usuario", response.data.nome);
     localStorage.setItem("token", token);
     api.defaults.headers.Authorization = `Bearer ${token}`;
     api.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
     setUsuario(usuarioLogado);
-    console.log("data time", responseUsuario.data);
     if (responseUsuario.data.idTime) {
       navigate(`/quadro/${responseUsuario.data.idTime}`);
     }

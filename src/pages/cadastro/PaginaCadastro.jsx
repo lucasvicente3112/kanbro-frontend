@@ -17,7 +17,7 @@ const PaginaCadastro = () => {
     cadastro(email, nome, senha);
 
     localStorage.setItem("email", email);
-
+    localStorage.setItem("usuario", nome);
     // const time = await recuperaTime(email).data;
     // console.log(time);
     // if (time) {

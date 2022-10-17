@@ -14,7 +14,6 @@ export const useFetch = (url) => {
         setLoading(true);
         const response = await axios.get(API_BASE_URL + url);
         setResponseData(response.data);
-        console.log(response.data);
       } catch (err) {
         setError(err);
       } finally {

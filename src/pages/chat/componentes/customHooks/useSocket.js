@@ -28,11 +28,9 @@ export const useSocket = (sala, usuario) => {
       reconnection: false,
       query: `usuario=${usuario}&sala=${sala}`, //"room=" + room+",username="+username,
     });
-    console.log("s em socket", s);
     setSocket(s);
     s.on("connect", () => setConnected(true));
     s.on("read_message", (res) => {
-      console.log(res);
       setSocketResponse({
         sala: res.sala,
         conteudo: res.conteudo,
