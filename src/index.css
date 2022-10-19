@@ -133,7 +133,15 @@ select {
   border: 1px solid #847D7D;
   border-radius: 5px;
 }
-
+.pos-criar-quadro{
+  padding: 2px 11em;
+  display: flex;
+}
+.botoes-membros{
+  padding: 45px 11em;
+  display: flex;
+  margin-left: 785px;
+}
 .col-header {
   font-size: 20px;
   font-weight: 600;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cadastroTime from "./cadastroTime";
+import BoxLateral from "../../assets/BoxLateral";
 import cadastroQuadro from "./cadastroQuadro";
 
 import "./CriarTimeStyle.css";
@@ -38,6 +39,7 @@ const PaginaLogin = () => {
 
   return (
     <div id="criarTime">
+      <BoxLateral />
       <h1 className="title">Para continuar é necessário cadastrar um time</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">

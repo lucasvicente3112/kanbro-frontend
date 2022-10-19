@@ -50,7 +50,9 @@ const QuadroKanban = () => {
   return (
     <Fragment>
       <Header />
-      <Button type="button" label="+ Criar" onClick={onOpen} />
+      <div className={"pos-criar-quadro"}>
+        <Button type="button" label="+ Criar" onClick={onOpen} />
+      </div>
       <NovaTarefa onClose={onClose} show={show} />
       <div className={"row"}>
         {estados.map((s) => {
@@ -70,7 +72,7 @@ const QuadroKanban = () => {
           );
         })}
       </div>
-      <div>
+      <div className="botoes-membros">
         <Button
           style={{ marginRight: "0.5rem" }}
           type="button"

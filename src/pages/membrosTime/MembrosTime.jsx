@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@mui/material";
 import DataTableTime from "./Table";
+import Header from "../quadroKanban/componentes/Header";
 import "./MembrosTime.css";
 
 const MembrosTime = () => {
@@ -12,8 +13,11 @@ const MembrosTime = () => {
   };
   return (
     <>
-      <h1>Lista membros {idTime}</h1>
-      <DataTableTime />
+      <Header />
+      <h2 className="titulo">Lista de membros</h2>
+      <div className="tamanhoTabela">
+        <DataTableTime />
+      </div>
       <div className="divSpacing">
         <Button
           onClick={() => navegarQuadro()}
