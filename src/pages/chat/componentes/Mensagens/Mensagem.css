@@ -6,12 +6,12 @@
   }
   .message_component {
     display: flex;
-    width: 90%;
+    width: 95%;
     min-width: 200px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #575757;
+    background-color: rgb(190, 187, 187);
   }
   
   .room_name {
@@ -102,7 +102,7 @@
   }
   
   .message_content_server {
-    background-color: rgb(66, 66, 66);
+    background-color: #0099C9;
     display: flex;
     padding: 10px;
     font-size: 19px;
@@ -116,7 +116,7 @@
     flex: 0 0 auto;
     height: 70px;
     width: 100%;
-    background: #40434e;
+    background: #0099C9;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   }
   .chat-input input {
@@ -126,11 +126,12 @@
     outline: 0 none;
     border: none;
     width: calc(100% - 100px);
-    color: white;
+    color: black;
     text-indent: 10px;
     font-size: 12pt;
     padding: 0;
-    background: #40434e;
+    background:  white;
+    border-radius: 50px;
   }
   
   .chat-input ::placeholder {

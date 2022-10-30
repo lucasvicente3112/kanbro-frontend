@@ -5,6 +5,7 @@ import BoxLateral from "../../assets/BoxLateral";
 import cadastroQuadro from "./cadastroQuadro";
 
 import "./CriarTimeStyle.css";
+import { Button } from "@mui/material";
 
 const PaginaLogin = () => {
   const navigate = useNavigate();
@@ -21,9 +22,7 @@ const PaginaLogin = () => {
     ],
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = async () => {
     const idTime = await cadastroTime(time);
     const quadro = {
       time: `${idTime}`,
@@ -40,7 +39,9 @@ const PaginaLogin = () => {
   return (
     <div id="criarTime">
       <BoxLateral />
-      <h1 className="title">Para continuar é necessário cadastrar um time</h1>
+      <h1 className="title">
+        Para continuar <br /> é necessário cadastrar um time
+      </h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="nome">Nome do time</label>
@@ -53,7 +54,13 @@ const PaginaLogin = () => {
           />
         </div>
         <div className="actions">
-          <button type="submit">Cadastrar</button>
+          <Button
+            onClick={() => handleSubmit()}
+            variant="contained"
+            size="small"
+          >
+            Cadastrar
+          </Button>
         </div>
       </form>
     </div>

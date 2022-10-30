@@ -49,8 +49,6 @@ export const Mensagem = ({ sala, usuario }) => {
 
   return (
     <div className="message_root_div">
-      <span className="room_name">sala: {sala} </span>
-      <span className="user_name">Welcome: {usuario} </span>
       <div className="message_component">
         <MensagemLista usuario={usuario} listaMensagem={messageList} />
         <form className="chat-input" onSubmit={(e) => sendMessage(e)}>
@@ -58,7 +56,7 @@ export const Mensagem = ({ sala, usuario }) => {
             type="text"
             value={messageInput}
             onChange={(e) => setMessageInput(e.target.value)}
-            placeholder="Type a message"
+            placeholder="Digite uma mensagem"
           />
           <button type="submit">
             {messageInput == "" ? (

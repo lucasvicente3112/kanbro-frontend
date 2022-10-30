@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import cadastro from "./cadastro";
 import BoxLateral from "../../assets/BoxLateral";
+import { Button, TextField } from "@mui/material";
 import { recuperaUsuarioComTime } from "../../services/Api";
 
 import "./PaginaCadastroStyle.css";
@@ -12,21 +13,13 @@ const PaginaCadastro = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = async () => {
     cadastro(email, nome, senha);
 
     localStorage.setItem("email", email);
     localStorage.setItem("usuario", nome);
-    // const time = await recuperaTime(email).data;
-    // console.log(time);
-    // if (time) {
-    //   navigate("/home");
-    // }
-    // if (!time) {
+
     navigate("/menu-time");
-    // }
   };
 
   return (
@@ -66,7 +59,13 @@ const PaginaCadastro = () => {
             />
           </div>
           <div className="actions">
-            <button type="submit">Cadastrar</button>
+            <Button
+              onClick={() => handleSubmit()}
+              variant="contained"
+              size="small"
+            >
+              Cadastrar
+            </Button>
           </div>
         </form>
       </div>
