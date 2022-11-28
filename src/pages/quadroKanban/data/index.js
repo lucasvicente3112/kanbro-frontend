@@ -1,18 +1,21 @@
 const estados = [
   {
     status: "To Do",
-    icon: "⭕️",
     color: "#EB5A46",
+    color2: "#1976d2",
+    color3: "#EB5A46",
   },
   {
     status: "Doing",
-    icon: "🔆️",
     color: "#00C2E0",
+    color2: "#1976d2",
+    color3: "#EB5A46",
   },
   {
     status: "Done",
-    icon: "✅",
     color: "#3981DE",
+    color2: "#1976d2",
+    color3: "#EB5A46",
   },
 ];
 

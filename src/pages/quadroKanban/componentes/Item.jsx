@@ -27,8 +27,13 @@ const Item = ({ item, index, status }) => {
   const onOpen = () => setShow(true);
   const onClose = () => setShow(false);
 
+  const [corChat, setCorChat] = useState(false);
+
   const [showChat, setShowChat] = useState(false);
-  const onOpenChat = () => setShowChat(true);
+  const onOpenChat = () => {
+    setShowChat(true);
+    setCorChat(true);
+  };
   const onCloseChat = () => setShowChat(false);
 
   drag(drop(ref));
@@ -58,7 +63,10 @@ const Item = ({ item, index, status }) => {
           size="small"
           variant="outlined"
           onClick={onOpenChat}
-          style={{ fontSize: "50%" }}
+          style={{
+            fontSize: "50%",
+            color: corChat ? status.color3 : status.color2,
+          }}
           endIcon={<Chat />}
         >
           Chat
