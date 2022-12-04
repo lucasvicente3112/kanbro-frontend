@@ -57,8 +57,8 @@ const QuadroKanban = () => {
       <div className={"row"}>
         {estados.map((s) => {
           return (
-            <div key={s.status} className={"col-wrapper"}>
-              <h2 className={"col-header"}>{s.status.toUpperCase()}</h2>
+            <div key={s.status} className={"coluna-quadro"}>
+              <h2 className={"header-coluna"}>{s.status.toUpperCase()}</h2>
               <DropWrapper onDrop={onDrop} status={s.status}>
                 <Coluna>
                   {cards

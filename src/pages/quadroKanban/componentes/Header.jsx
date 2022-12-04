@@ -2,7 +2,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className={"row"}>
-      <p className={"page-header"}>Kanbro!</p>
+      <p className={"header-pagina"}>Kanbro!</p>
     </div>
   );
 };

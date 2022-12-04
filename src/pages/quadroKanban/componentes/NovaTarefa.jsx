@@ -35,9 +35,9 @@ const NovaTarefa = ({ show, onClose }) => {
       className={"modal"}
       overlayClassName={"overlay"}
     >
-      <div className={"close-btn-ctn"}>
+      <div className={"contorno-botao-fechar"}>
         <h1 style={{ flex: "1 90%" }}>Adicionar Tarefa</h1>
-        <button className={"close-btn"} onClick={onClose}>
+        <button className={"botao-fechar"} onClick={onClose}>
           X
         </button>
       </div>

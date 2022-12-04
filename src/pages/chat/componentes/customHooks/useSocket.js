@@ -26,7 +26,7 @@ export const useSocket = (sala, usuario) => {
   useEffect(() => {
     const s = io(SOCKET_BASE_URL, {
       reconnection: false,
-      query: `usuario=${usuario}&sala=${sala}`, //"room=" + room+",username="+username,
+      query: `usuario=${usuario}&sala=${sala}`,
     });
     setSocket(s);
     s.on("connect", () => setConnected(true));

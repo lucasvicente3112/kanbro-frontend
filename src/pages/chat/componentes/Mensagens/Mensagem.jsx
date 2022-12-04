@@ -4,7 +4,6 @@ import { useSocket } from "../../componentes/customHooks/useSocket";
 import "primeicons/primeicons.css";
 import "./Mensagem.css";
 import { MensagemLista } from "./MensagemLista";
-import { timeStampConverter } from "../../utils/timeUtils";
 import { useFetch } from "../customHooks/useFetch";
 
 export const Mensagem = ({ sala, usuario }) => {
@@ -36,7 +35,6 @@ export const Mensagem = ({ sala, usuario }) => {
       sendData({
         conteudo: messageInput,
       });
-      const time = ""; //timeStampConverter(Math.floor(Date.now() / 1000));
       addMessageToList({
         conteudo: messageInput,
         usuario: usuario,

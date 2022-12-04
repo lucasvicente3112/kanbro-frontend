@@ -33,7 +33,6 @@ const PaginaLogin = () => {
     if (idTime) {
       navigate(`/quadro/${idTime}`);
     }
-    // navigate("/home");
   };
 
   return (

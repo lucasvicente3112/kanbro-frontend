@@ -12,8 +12,8 @@ const WrapperChat = ({ show, onClose, item, usuario }) => {
       className={"modal"}
       overlayClassName={"overlay"}
     >
-      <div className={"close-btn-ctn"}>
-        <button className={"close-btn"} onClick={onClose}>
+      <div className={"contorno-botao-fechar"}>
+        <button className={"botao-fechar"} onClick={onClose}>
           X
         </button>
       </div>

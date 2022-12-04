@@ -10,9 +10,9 @@ const DetalhesTarefa = ({ show, onClose, item }) => {
       className={"modal"}
       overlayClassName={"overlay"}
     >
-      <div className={"close-btn-ctn"}>
+      <div className={"contorno-botao-fechar"}>
         <h1 style={{ flex: "1 90%" }}>{item.titulo}</h1>
-        <button className={"close-btn"} onClick={onClose}>
+        <button className={"botao-fechar"} onClick={onClose}>
           X
         </button>
       </div>

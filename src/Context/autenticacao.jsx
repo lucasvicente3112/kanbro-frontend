@@ -41,9 +41,6 @@ export const AuthenticationProvider = ({ children }) => {
   };
 
   const logout = () => {
-    //   localStorage.removeItem("email");
-    //   localStorage.removeItem("token");
-    //   localStorage.removeItem("nomeTime");
     localStorage.clear();
     api.defaults.headers.Authorization = null;
     setUsuario(null);

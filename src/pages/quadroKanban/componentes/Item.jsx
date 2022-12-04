@@ -42,13 +42,12 @@ const Item = ({ item, index, status }) => {
     <Fragment>
       <div ref={ref} style={{ opacity: isDragging ? 0 : 1 }} className={"item"}>
         <div
-          className={"color-bar"}
+          className={"cor-barra"}
           style={{ backgroundColor: status.color }}
         />
         <p className={"titulo-item"}>Título: {item.titulo}</p>
         <p className={"titulo-item"}>Descrição: {item.descricao}</p>
         <p className={"titulo-item"}>Responsável: {item.responsavel}</p>
-        {/* <div onClick={onOpen}>Detalhes</div> */}
         <Button
           size="small"
           variant="outlined"
@@ -58,7 +57,6 @@ const Item = ({ item, index, status }) => {
         >
           Detalhes
         </Button>
-        {/* <div onClick={onOpenChat}>Chat</div> */}
         <Button
           size="small"
           variant="outlined"
