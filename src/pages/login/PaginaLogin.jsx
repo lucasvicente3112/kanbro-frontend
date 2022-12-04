@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import BoxLateral from "../../assets/BoxLateral";
 import { AuthenticationContext } from "../../Context/autenticacao";
+import { Button } from "@mui/material";
 
 import "./PaginaLoginStyle.css";
 
@@ -13,8 +14,6 @@ const PaginaLogin = () => {
   const [senha, setSenha] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-
     login(email, senha);
   };
   const navegaCadastro = () => {
@@ -47,10 +46,22 @@ const PaginaLogin = () => {
           />
         </div>
         <div className="actions">
-          <button type="submit">Entrar</button>
+          <Button
+            onClick={() => handleSubmit()}
+            variant="contained"
+            size="small"
+          >
+            Entrar
+          </Button>
         </div>
         <div>
-          <button onClick={() => navegaCadastro()}>Cadastrar</button>
+          <Button
+            onClick={() => navegaCadastro()}
+            variant="contained"
+            size="small"
+          >
+            Cadastrar
+          </Button>
         </div>
       </form>
     </div>

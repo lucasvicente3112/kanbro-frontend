@@ -10,6 +10,7 @@ import EsperaConvite from "./pages/espera/EsperaConvite";
 import QuadroKanban from "./pages/quadroKanban/QuadroKanban";
 import AdicaoMembro from "./pages/adicaoMembro/AdicaoMembro";
 import MembrosTime from "./pages/membrosTime/MembrosTime";
+
 import {
   AuthenticationProvider,
   AuthenticationContext,

@@ -35,3 +35,21 @@ export const recuperaUsuariosDoTime = async (idTime) => {
 export const removeUsuarioDoTime = async (email) => {
   return api.post(`/time/remover/${email}`);
 };
+
+export const adicionarTarefa = async (tarefa) => {
+  return api.post("tarefa/cadastrar", tarefa);
+};
+
+export const recuperaTarefasPorQuadro = async (quadro) => {
+  return api.get(`/tarefa/quadro/${quadro}`);
+};
+
+export const atualizaStatus = async (tarefa, quadro, status) => {
+  return api.post(
+    `/tarefa/${tarefa}/quadro/${quadro}/atualiza-status/${status}`
+  );
+};
+
+export const recuperaResponseSocket = async (sala) => {
+  return api.get(`/mensagem/${sala}`);
+};
